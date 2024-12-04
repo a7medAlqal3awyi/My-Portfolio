@@ -7,6 +7,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/mixins/responsive_position_mixin.dart';
+import '../../../../core/shared/app_urls.dart';
 import '../../../../core/widgets/body/web_body.dart';
 import '../../../../core/widgets/dividers/gradient_divider.dart';
 import '../../../../core/widgets/dividers/presentation_divider.dart';
@@ -72,23 +73,23 @@ class PresentationWeb extends StatelessWidget with ResponsivePositionMixin {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Expanded(
+                          Expanded(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                SectionSubtitle(
+                                const SectionSubtitle(
                                   paddingTop: 0,
                                   paddingBottom: 32,
 
                                   title: "> Software Engineer | Mobile Application | Flutter Developer",
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 400,
                                   child: GradientDivider(),
                                 ),
 
-                                SizedBox(
+                                const SizedBox(
                                   child: Center(
                                     child: SectionText(
                                       paddingTop: 32,
@@ -100,11 +101,15 @@ class PresentationWeb extends StatelessWidget with ResponsivePositionMixin {
                                   ),
                                 ),
                                 // const Phrase(),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
 
-                                DownloadButton()
+                                MyButton(text: "My Resume",
+                                  onTap: (){
+                                    launchUrl(Uri.parse(AppUrls.resume));
+
+                                  },),
                               ],
                             ),
                           ),

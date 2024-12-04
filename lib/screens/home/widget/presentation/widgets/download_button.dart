@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/core/shared/app_urls.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class DownloadButton extends StatelessWidget {
-  const DownloadButton({super.key, this.text, this.onTap, this.icon});
+class MyButton extends StatelessWidget {
+  const MyButton({super.key, required this.text, this.onTap, this.icon});
 
-  final String? text;
+  final String text;
 
   final void Function()? onTap;
 
@@ -15,10 +15,7 @@ class DownloadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap ??
-          () {
-            launchUrl(Uri.parse(AppUrls.resume));
-          },
+      onTap: onTap,
       child: Container(
         width: 200,
         alignment: Alignment.center,
@@ -41,7 +38,7 @@ class DownloadButton extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              text ?? 'My Resume',
+              text ,
               style: Theme.of(context).textTheme.labelSmall!.copyWith(
                   color: Colors.white,
                   letterSpacing: 1.2,

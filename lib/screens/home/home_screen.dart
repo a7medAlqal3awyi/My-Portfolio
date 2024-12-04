@@ -5,7 +5,6 @@ import 'package:portfolio/screens/home/widget/footer/custom_footer.dart';
 import 'package:portfolio/screens/home/widget/presentation/presentation.dart';
 import 'package:portfolio/screens/home/widget/projects/projects.dart';
 import 'package:portfolio/screens/home/widget/skills/skills.dart';
-import 'package:portfolio/screens/home/widget/skills/skills_web.dart';
 import 'package:portfolio/screens/home/widget/social/social.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 

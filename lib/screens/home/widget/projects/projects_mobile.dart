@@ -55,7 +55,7 @@ class ProjectsMobile extends StatelessWidget {
                   ),
                 ),
                 // const AppTextButtonWidget(),
-                DownloadButton(
+                MyButton(
                   text: "See Projects",
                   icon: FontAwesomeIcons.github,
                   onTap: ()=>LaunchUrls().launchURL(AppUrls.gitHub)

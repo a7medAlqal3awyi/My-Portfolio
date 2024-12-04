@@ -3,8 +3,10 @@ import 'package:portfolio/core/extensions/extensions.dart';
 import 'package:portfolio/screens/home/widget/presentation/widgets/download_button.dart';
 
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/responsive/breakpoints.dart';
+import '../../../../core/shared/app_urls.dart';
 import '../../../../core/widgets/body/mobile_body.dart';
 import '../../../../core/widgets/dividers/gradient_divider.dart';
 import '../../../../core/widgets/dividers/presentation_divider.dart';
@@ -103,21 +105,14 @@ class PresentationMobile extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20,),
-                  // AppTextButtonWidget(
-                  //   onPressed: () =>
-                  //       LaunchUrls().launchURL(AppUrls.resume)
-                  //
-                  //   ,
-                  //   tex: "My Resume",
-                  // ),
-                  const DownloadButton(),
+                   MyButton(text: "My Resume",
+                  onTap: (){
+                    launchUrl(Uri.parse(AppUrls.resume));
+
+                  },),
                   const SizedBox(height: 20,),
 
-                  // Container(
-                  //   padding: const EdgeInsets.only(top: 8, bottom: 35),
-                  //   alignment: Alignment.center,
-                  //   child: const Phrase(),
-                  // ),
+
 
 
                 ],
